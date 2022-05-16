@@ -1,0 +1,23 @@
+{
+  "extends": "tsconfig/base.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "outDir": "dist",
+    "target": "es6",
+    "esModuleInterop": true,
+    "rootDir": ".",
+    "baseUrl": ".",
+    "pretty": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@main/*": ["./src/main/*"],
+      "@test/*": ["./test/*"],
+      "@presentation/*": ["./src/presentation/*"],
+      "@app/*": ["./src/application/*"],
+      "@infra/*": ["./src/infra/*"]
+    }
+  },
+  "include": ["./src", "./test"],
+  "exclude": ["node_modules"]
+}

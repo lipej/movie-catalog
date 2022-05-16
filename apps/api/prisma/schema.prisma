@@ -1,0 +1,41 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Types {
+  MOVIE
+  TVSHOW
+}
+
+model User {
+  id             String  @id @unique @default(uuid())
+  name           String
+  email          String  @unique
+  password       String
+  active         Boolean @default(false)
+  activationHash String?
+}
+
+model MovieShow {
+  id            String   @id @unique @default(uuid())
+  poster        String
+  title         String
+  originalTitle String
+  year          String
+  duration      String
+  tags          String[]
+  resume        String
+  cast          String[]
+  director      String
+  rating        String[]
+  awards        String[]
+  type          Types
+}
