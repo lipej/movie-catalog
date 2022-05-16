@@ -1,0 +1,28 @@
+{
+  "name": "movie-catalog",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "test": "turbo run test",
+    "prod": "turbo run prod",
+    "seed": "turbo run seed"
+
+  },
+  "devDependencies": {
+    "prettier": "latest",
+    "turbo": "1.2.3"
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=14.0.0"
+  },
+  "packageManager": "pnpm@6.32.8"
+}
